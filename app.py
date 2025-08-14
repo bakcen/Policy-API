@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 def render_and_extract(url: str) -> dict:
     with sync_playwright() as p:
